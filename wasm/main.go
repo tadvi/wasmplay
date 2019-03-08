@@ -9,7 +9,7 @@ import (
 func main() {
 
 	doc := js.Global().Get("document")
-	log.Println("WASM main works")
+	log.Println("WASM main")
 
 	clickBtn := js.FuncOf(func(this js.Value, evt []js.Value) interface{} {
 		log.Println("clicked")
