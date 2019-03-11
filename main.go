@@ -37,13 +37,13 @@ func ajaxHandler(w http.ResponseWriter, req *http.Request) {
 		log.Println(err)
 		return
 	}
-	fmt.Println(b)
+	fmt.Println(string(b))
 	fmt.Fprintf(w, "ok")
 }
 
 // formHandler dumps form values into stdout.
 func formHandler(w http.ResponseWriter, req *http.Request) {
-	err := req.ParseForm()
+	err := req.ParseMultipartForm(1 << 20)
 	if err != nil {
 		log.Println(err)
 		return
