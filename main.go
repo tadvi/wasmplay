@@ -38,6 +38,7 @@ func ajaxHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	fmt.Println(b)
+	fmt.Fprintf(w, "ok")
 }
 
 // formHandler dumps form values into stdout.
@@ -48,6 +49,7 @@ func formHandler(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	fmt.Println(req.Form)
+	fmt.Fprintf(w, "ok")
 }
 
 var upgrader = websocket.Upgrader{
