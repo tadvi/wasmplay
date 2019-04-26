@@ -15,16 +15,16 @@ import (
 
 var (
 	listen = flag.String("listen", ":8080", "listen address")
-	dir    = flag.String("dir", ".", "directory to serve")
+	dir    = flag.String("dir", "static/", "directory to serve")
 )
 
 func main() {
 	flag.Parse()
 	log.Printf("listening on %q...", *listen)
 
-	http.Handle("/ajax", http.HandlerFunc(ajaxHandler))
-	http.Handle("/form", http.HandlerFunc(formHandler))
-	http.Handle("/websocket", http.HandlerFunc(websocketHandler))
+	http.HandleFunc("/ajax", ajaxHandler)
+	http.HandleFunc("/form", formHandler)
+	http.HandleFunc("/websocket", websocketHandler)
 
 	http.Handle("/", http.FileServer(http.Dir(*dir)))
 	log.Fatal(http.ListenAndServe(*listen, nil))
