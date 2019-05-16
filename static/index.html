@@ -7,15 +7,32 @@
 </head>
 
 <body>
-	<!-- Add the following polyfill for Microsoft Edge 17/18 support:
+	<!-- Add the following polyfill for MS Edge 17/18 support:
     (see https://caniuse.com/#feat=textencoder) -->
-    <script src="wasm/encoding.min.js"></script>
+    <script src="wasm/js/check_wasm.js"></script>
+    <script src="wasm/js/encoding.min.js"></script>
+    <script src="wasm/js/wasm_exec.js"></script>
+    <script src="wasm/js/app_loader.js" defer></script>
 
-	<script src="wasm/wasm_exec.js"></script>
-	<script src="wasm/app_loader.js"></script>
+	<button type="submit">Submit</button>
+	<!-- This will trigger on 'click' since data-event defaults to 'click'. -->
+	<button data-func="App.ExtButton" type="button">Ext Button</button>
+
+	<div id="my"></div>
+
+	<template data-plate="my">
+		<p>{{ .Enter }}</p>
+		<p>{{ .KeyDown }}</p>
+
+		<ul>
+			{{ range .Values }}
+			<li>{{ . }}</li>
+			{{ end }}
+		</ul>
+	</template>
 
 
-	<button id="try-button">Try me</button>
+
 </body>
 
 </html>
