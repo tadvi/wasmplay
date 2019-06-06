@@ -9,7 +9,7 @@ if (!WebAssembly.instantiateStreaming) { // polyfill
 
 const go = new Go();
 
-WebAssembly.instantiateStreaming(fetch("wasm/main.wasm"), go.importObject).then((result) => {
+WebAssembly.instantiateStreaming(fetch("/static/wasm/main.wasm"), go.importObject).then((result) => {
 	go.run(result.instance);
 }).catch((err) => {
 	console.error(err);

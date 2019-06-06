@@ -1,10 +1,8 @@
 github.com/gorilla/websocket v1.4.0 h1:WDFjx/TMzVgy9VdMMQi2K2Emtwi2QcUQsztZ/zLaH/Q=
 github.com/gorilla/websocket v1.4.0/go.mod h1:E7qHFY5m1UJ88s3WnNqhKjPHQ0heANvMoAMk2YaljkQ=
-github.com/tadvi/binding v0.0.0-20190510165041-5b82efea66c9 h1:SsHm84wxzMPNfB4xhorVUFXPYSq+DzHJH8NJIQSC9mw=
-github.com/tadvi/binding v0.0.0-20190510165041-5b82efea66c9/go.mod h1:nhFJAEkkoktALF8QZr6C/ZgwKJgJu6IOGIwAlOtfFd0=
-github.com/tadvi/binding v0.0.0-20190513130124-a4c67ef62a04 h1:51VczayBqRCn1e7ylIH3wPUKK0ng2T1h/OHPfZJjioY=
-github.com/tadvi/binding v0.0.0-20190513130124-a4c67ef62a04/go.mod h1:nhFJAEkkoktALF8QZr6C/ZgwKJgJu6IOGIwAlOtfFd0=
-github.com/tadvi/plate v0.0.0-20190513135404-56b609169dd5 h1:qtXMxmx9123bbtKSUYuC4hhOc8aht79hV9rjB3346F4=
-github.com/tadvi/plate v0.0.0-20190513135404-56b609169dd5/go.mod h1:tWNar+YAq1Zr69p+iaOnl4dKsbUyFZDnxPmJ3BtZENI=
-github.com/tadvi/plates v0.0.0-20190513122621-2b30f81baa9b h1:lF2ztwjBSbiIVMXy0rWSokGSZotr2BuSWkWPGWvEQP0=
-github.com/tadvi/plates v0.0.0-20190513122621-2b30f81baa9b/go.mod h1:7PBHuXMC+y3WE5tFwre2GZDvEyXOhDmmyGmdD0pe/Co=
+github.com/tadvi/browser v0.0.0-20190606151603-397058f2e789 h1:0muVelGJl50VByzc17/xhPcQgk0bnDaEyVKZbssqKI0=
+github.com/tadvi/browser v0.0.0-20190606151603-397058f2e789/go.mod h1:wn0tC71O6G+p24TjURs08hO5k4ivL/Ur+5wGk3fDzgc=
+github.com/tadvi/webkit v0.0.0-20190605204047-3debdc824563 h1:CyQerzMTs3Llo/WTvRQdKAK7KTFzGS5hryFN3l4/pcE=
+github.com/tadvi/webkit v0.0.0-20190605204047-3debdc824563/go.mod h1:vCWshhHWDXZKT8EzFX0owJGIZIfEuEPBfwjC29wrbmk=
+github.com/tadvi/wildcard v0.0.0-20190606132256-f3e1ed60a3fe h1:wEF4VscQPXsox0s5kLnkq56cy3nIr70blVtcs2CddCU=
+github.com/tadvi/wildcard v0.0.0-20190606132256-f3e1ed60a3fe/go.mod h1:58Y4ANw7aEy0MdbCGcZ3lNFI5ZIEObfJDYcXxZiUu4U=

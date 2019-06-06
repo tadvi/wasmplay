@@ -1,21 +1,17 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"syscall/js"
 
-	"github.com/tadvi/plate"
+	"github.com/tadvi/browser/ajax"
+	"github.com/tadvi/browser/dom"
 )
 
 var doc = js.Global().Get("document")
 
 type App struct {
-	Enter   int
-	KeyDown string
-
-	Values []string
-
-	Checkbox bool
 }
 
 var app App
@@ -24,20 +20,13 @@ var app App
 func main() {
 	log.Println("WASM main")
 
-	/*clickBtn := js.FuncOf(func(this js.Value, evt []js.Value) interface{} {
-		log.Println("clicked")
-		return nil
+	dom.Select("#submit").On("click", func(this, evt js.Value) {
+
+		fmt.Println("clicked")
+		ajax.Post("/ajax", "", func(resp string) {
+			fmt.Println(resp)
+		})
 	})
-
-	btn := doc.Call("getElementById", "try-button")
-	btn.Call("addEventListener", "click", clickBtn)*/
-
-	p := plate.New("my")
-	app.Enter = 11
-	app.KeyDown = "works"
-	app.Values = []string{"1", "2", "3", "4"}
-
-	p.Render(&app)
 
 	select {}
 }

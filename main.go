@@ -1,33 +1,43 @@
 package main
 
 import (
-	"github.com/gorilla/websocket"
-)
-
-import (
 	"flag"
 	"fmt"
 	"log"
 	"net/http"
 	"net/http/httputil"
 	"strconv"
+
+	"github.com/gorilla/websocket"
+	"github.com/tadvi/webkit"
+	"github.com/tadvi/wildcard"
 )
 
-var (
-	listen = flag.String("listen", ":80", "listen address")
-	dir    = flag.String("dir", "static/", "directory to serve")
+const (
+	staticURL = "/static/"
+	staticDir = "static"
 )
+
+var httpAddr = flag.String("http-addr", ":80", "listen address")
 
 func main() {
 	flag.Parse()
-	log.Printf("listening on %q...", *listen)
+	log.Printf("listening on %q...", *httpAddr)
 
-	http.HandleFunc("/ajax", ajaxHandler)
-	http.HandleFunc("/form", formHandler)
-	http.HandleFunc("/websocket", websocketHandler)
+	var router wildcard.Router
+	router.Post("/ajax", http.HandlerFunc(ajaxHandler))
+	router.Post("/form", http.HandlerFunc(formHandler))
+	router.Post("/websocket", http.HandlerFunc(websocketHandler))
+	router.Get("/", http.HandlerFunc(indexHandler))
 
-	http.Handle("/", http.FileServer(http.Dir(*dir)))
-	log.Fatal(http.ListenAndServe(*listen, nil))
+	router.Static(staticURL, http.FileServer(http.Dir(staticDir)))
+
+	log.Fatal(http.ListenAndServe(*httpAddr, &router))
+}
+
+// indexHandler renders index template.
+func indexHandler(w http.ResponseWriter, req *http.Request) {
+	webkit.Render(w, "index.html", nil)
 }
 
 // ajaxHandler dumps entire request into stdout.

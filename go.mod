@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/gorilla/websocket v1.4.0
-	github.com/tadvi/binding v0.0.0-20190513130124-a4c67ef62a04
-	github.com/tadvi/plate v0.0.0-20190513135404-56b609169dd5
-	github.com/tadvi/plates v0.0.0-20190513122621-2b30f81baa9b
+	github.com/tadvi/browser v0.0.0-20190606151603-397058f2e789
+	github.com/tadvi/webkit v0.0.0-20190605204047-3debdc824563
+	github.com/tadvi/wildcard v0.0.0-20190606132256-f3e1ed60a3fe
 )
